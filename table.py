@@ -25,7 +25,7 @@ external_stylesheets = [dbc.themes.BOOTSTRAP]
 server = Flask(__name__) # define flask app.server
 
 #app = Dash(__name__, external_stylesheets=external_stylesheets)
-app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], assets_folder='assets')
+app = Dash(__name__, external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
@@ -43,7 +43,7 @@ app.layout =dbc.Container([
                                      'textAlign': 'left'},
                          style_data={'whiteSpace': 'normal',
                                      'height': 'auto',
-                                     'lineHeight': '15px'},
+                                     'lineHeight': '20px'},
                          style_cell_conditional=[
                              {'if': {'column_id': 'title'},
                               'width': '50%'},
