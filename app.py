@@ -11,7 +11,7 @@ df['to'] = df['to'].apply(lambda x: "<a href={} target='_blank'>link</a>".format
 df['thumbnail1'] = df['thumbnail']
 #df['thumbnail'] = df['logo'].apply(lambda x: "<img src={} width='100' height='50' />".format(x))
 #df['thumbnail'] = df['thumbnail'].apply(lambda x: "<img src='assets/{}.PNG' width='100' height='30' />".format(x))
-df['thumbnail'] = df['thumbnail'].apply(lambda x: "<img src='https://raw.githubusercontent.com/muhammad5/table/main/assets/{}.png' width='100' height='30' />".format(x))
+#df['thumbnail'] = df['thumbnail'].apply(lambda x: "<img src='https://raw.githubusercontent.com/muhammad5/table/main/assets/{}.png' width='100' height='30' />".format(x))
 
 place_holder = None
 df_filter = pd.DataFrame(
