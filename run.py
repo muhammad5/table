@@ -1,2 +1,2 @@
 import subprocess
-subprocess.call('run_waitress.bat')
+subprocess.call('waitress-serve --listen=0.0.0.0:8080 table:app.server')
