@@ -103,6 +103,6 @@ def update_table(value1,value2):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False,host="0.0.0.0", port=5000)
+    app.run_server(debug=False,host="0.0.0.0", port=8080)
     #app.run_server(debug=False)
     #serve(app.server,host="0.0.0.0",port=8080)
