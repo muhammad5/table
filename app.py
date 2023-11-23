@@ -32,7 +32,7 @@ app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
 #server = Flask(__name__) # define flask app.server
-server = FastAPI(__name__)
+server = FastAPI()
 #server = app.server
 
 app.layout =dbc.Container([
