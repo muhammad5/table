@@ -1,6 +1,7 @@
 from dash import Dash, html, dcc, callback, Output, Input, dash_table, State, exceptions
 import dash_bootstrap_components as dbc
 from flask import Flask
+from fastapi import FastAPI
 #from waitress import serve
 #import subprocess
 import plotly.express as px
@@ -30,7 +31,8 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.LITERA], assets_folder='as
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
-server = Flask(__name__) # define flask app.server
+#server = Flask(__name__) # define flask app.server
+server = FastAPI(__name__)
 #server = app.server
 
 app.layout =dbc.Container([
