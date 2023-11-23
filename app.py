@@ -1,8 +1,8 @@
 from dash import Dash, html, dcc, callback, Output, Input, dash_table, State, exceptions
 import dash_bootstrap_components as dbc
 from flask import Flask
-from waitress import serve
-import subprocess
+#from waitress import serve
+#import subprocess
 import plotly.express as px
 import plotly.graph_objs as go
 import pandas as pd
