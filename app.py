@@ -1,7 +1,7 @@
 from dash import Dash, html, dcc, callback, Output, Input, dash_table, State, exceptions
 import dash_bootstrap_components as dbc
 from flask import Flask
-from waitress import serve
+#from waitress import serve
 #import subprocess
 import plotly.express as px
 import plotly.graph_objs as go
@@ -106,9 +106,9 @@ def update_table(value1,value2):
 
 
 if __name__ == '__main__':
-    #app.run_server(debug=False,host="0.0.0.0")
+    app.run_server(debug=False,host="0.0.0.0")
     #app.run_server(debug=False)
-    serve(app.server,host="0.0.0.0")
+    #serve(app.server,host="0.0.0.0")
     #subprocess.run(['waitress-serve','--listen=0.0.0.0:8080','app:app.server'])
 
 #subprocess.run('waitress-serve --listen=0.0.0.0:8080 app:app.server')
