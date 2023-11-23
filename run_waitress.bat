@@ -1,1 +1,1 @@
-waitress-serve --listen=0.0.0.0:8080 table:app.server
+waitress-serve --listen=0.0.0.0:8080 app:app.server
