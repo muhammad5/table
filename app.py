@@ -24,12 +24,14 @@ df_filter = pd.DataFrame(
 
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 
-server = Flask(__name__) # define flask app.server
 
 #app = Dash(__name__, external_stylesheets=external_stylesheets)
 app = Dash(__name__, external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
+
+#server = Flask(__name__) # define flask app.server
+server = app.server
 
 app.layout =dbc.Container([
     dbc.Label('News Feed'),
