@@ -1,7 +1,7 @@
 from dash import Dash, html, dcc, callback, Output, Input, dash_table, State, exceptions
 import dash_bootstrap_components as dbc
 from flask import Flask
-from fastapi import FastAPI
+#from fastapi import FastAPI
 #from waitress import serve
 #import subprocess
 import plotly.express as px
@@ -31,9 +31,9 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.LITERA], assets_folder='as
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
-#server = Flask(__name__) # define flask app.server
-server = FastAPI()
-#server = app.server
+server = Flask(__name__) # define flask app.server
+#server = FastAPI() #uvicorn
+#server = app.server #gunicorn
 
 app.layout =dbc.Container([
     dbc.Label('News Feed'),
@@ -110,7 +110,7 @@ def update_table(value1,value2):
 if __name__ == '__main__':
     app.run_server(debug=False,host="0.0.0.0")
     #app.run_server(debug=False)
-    #serve(app.server,host="0.0.0.0")
+    #serve(app.server,host="0.0.0.0") #waitress
     #subprocess.run(['waitress-serve','--listen=0.0.0.0:8080','app:app.server'])
 
 #subprocess.run('waitress-serve --listen=0.0.0.0:8080 app:app.server')
