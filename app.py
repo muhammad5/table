@@ -32,9 +32,9 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.LITERA], assets_folder='as
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
-server = Flask(__name__) # define flask app.server
+#server = Flask(__name__) # define flask app.server
 #server = FastAPI() #uvicorn
-#server = app.server #gunicorn
+server = app.server #gunicorn
 
 app.layout =dbc.Container([
     dbc.Label('News Feed'),

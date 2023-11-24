@@ -1,5 +1,7 @@
 gunicorn app:server
 
+gunicorn --workers=3 app:app
+
 waitress-serve --listen=0.0.0.0 app:app.server
 
 uvicorn app:app --host 0.0.0.0
