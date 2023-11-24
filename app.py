@@ -3,6 +3,7 @@ import dash_bootstrap_components as dbc
 from flask import Flask
 #from fastapi import FastAPI
 #from waitress import serve
+#from gevent.pywsgi import WSGIServer
 #import subprocess
 import plotly.express as px
 import plotly.graph_objs as go
@@ -108,10 +109,11 @@ def update_table(value1,value2):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False,host="0.0.0.0")
-    #app.run_server(debug=False)
+    #app.run_server(debug=False,host="0.0.0.0")
+    app.run_server(debug=False)
     #serve(app.server,host="0.0.0.0") #waitress
-    #subprocess.run(['waitress-serve','--listen=0.0.0.0:8080','app:app.server'])
+    #http_server = WSGIServer('0.0.0.0', 8080, app)
+    #http_server.serve_forever()
 
 #subprocess.run('waitress-serve --listen=0.0.0.0:8080 app:app.server')
 #subprocess.run(['waitress-serve','--listen=0.0.0.0:8080','app:app.server'])
