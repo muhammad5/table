@@ -9,7 +9,7 @@ import plotly.express as px
 import plotly.graph_objs as go
 import pandas as pd
 
-df = pd.read_csv('berita.csv', sep=';')
+df = pd.read_csv('berita.csv', sep=';', nrows=1000)
 df['to'] = df['to'].apply(lambda x: "<a href={} target='_blank'>link</a>".format(x))
 df['thumbnail1'] = df['thumbnail']
 #df['thumbnail'] = df['logo'].apply(lambda x: "<img src={} width='100' height='50' />".format(x))
