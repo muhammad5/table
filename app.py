@@ -3,6 +3,7 @@ import dash_bootstrap_components as dbc
 from flask import Flask
 from fastapi import FastAPI
 from fastapi.middleware.wsgi import WSGIMiddleware
+import uvicorn
 #from waitress import serve
 #from gevent.pywsgi import WSGIServer
 #import subprocess
@@ -112,7 +113,8 @@ dash_app = app
 app = FastAPI()
 app.mount('/dash',WSGIMiddleware(dash_app.server))
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
+    uvicorn.run(app, port=1000)
     #app.run_server(debug=False,host="0.0.0.0")
     #app.run_server(debug=False)
     #serve(app.server,host="0.0.0.0") #waitress
