@@ -29,8 +29,8 @@ df_filter = pd.DataFrame(
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 
 
-#app = Dash(__name__, external_stylesheets=external_stylesheets)
-app = Dash(__name__, requests_pathname_prefix='/dash/', external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
+#app = Dash(__name__, external_stylesheets=external_stylesheets)#requests_pathname_prefix='/dash/'
+app = Dash(__name__, external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
