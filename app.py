@@ -1,7 +1,7 @@
 from dash import Dash, html, dcc, callback, Output, Input, dash_table, State, exceptions
 import dash_bootstrap_components as dbc
 from flask import Flask
-from fastapi import FastAPI
+#from fastapi import FastAPI
 #from waitress import serve
 #from gevent.pywsgi import WSGIServer
 #import subprocess
@@ -32,8 +32,8 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.LITERA], assets_folder='as
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
-#server = Flask(__name__) # define flask app.server
-server = FastAPI() #uvicorn
+server = Flask(__name__) # define flask app.server
+#server = FastAPI() #uvicorn
 #server = app.server #gunicorn
 
 app.layout =dbc.Container([
@@ -108,13 +108,13 @@ def update_table(value1,value2):
     return tiers, data.to_dict("records"), status, tier
 
 
-#if __name__ == '__main__':
-    #app.run_server(debug=False,host="0.0.0.0")
+if __name__ == '__main__':
+    app.run_server(debug=False,host="0.0.0.0")
     #app.run_server(debug=False)
     #serve(app.server,host="0.0.0.0") #waitress
     #http_server = WSGIServer('0.0.0.0', 8080, app)
     #http_server.serve_forever()
-app.run_server(debug=False)
+#app.run_server(debug=False)
 
 #subprocess.run('waitress-serve --listen=0.0.0.0:8080 app:app.server')
 #subprocess.run(['waitress-serve','--listen=0.0.0.0:8080','app:app.server'])
