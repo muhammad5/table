@@ -116,7 +116,7 @@ app.mount('/dash',WSGIMiddleware(dash_app.server))
 #app = WsgiToAsgi(app)
 
 if __name__ == '__main__':
-    uvicorn.run(app, host="0.0.0.0"))
+    uvicorn.run(app, host="0.0.0.0")
     #app.run_server(debug=False,host="0.0.0.0")
     #app.run_server(debug=False)
     #serve(app.server,host="0.0.0.0") #waitress
