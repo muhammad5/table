@@ -32,7 +32,7 @@ external_stylesheets = [dbc.themes.BOOTSTRAP]
 server = Flask(__name__)
 
 #app = Dash(__name__, external_stylesheets=external_stylesheets)#requests_pathname_prefix='/dash/'
-app = Dash(__name__, server=server,requests_pathname_prefix='/dash/', external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
+app = Dash(__name__, server=server,requests_pathname_prefix='/', external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
@@ -114,7 +114,8 @@ def update_table(value1,value2):
 dash_app = app
 app = FastAPI()
 
-@app.get("/")
+#@app.get("/")
+'''
 def read_main():
     return {
         "routes": [
@@ -123,12 +124,12 @@ def read_main():
             {"method": "GET", "path": "/dash", "summary": "Sub-mounted Dash application"},
         ]
     }
-
+'''
 @app.get("/status")
 def get_status():
     return {"status": "ok"}
 
-app.mount('/dash',WSGIMiddleware(dash_app.server))
+app.mount('/',WSGIMiddleware(dash_app.server))
 #app = WsgiToAsgi(app)
 
 if __name__ == '__main__':
