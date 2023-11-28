@@ -112,6 +112,21 @@ def update_table(value1,value2):
 
 dash_app = app
 app = FastAPI()
+
+@app.get("/")
+def read_main():
+    return {
+        "routes": [
+            {"method": "GET", "path": "/", "summary": "Landing"},
+            {"method": "GET", "path": "/status", "summary": "App status"},
+            {"method": "GET", "path": "/dash", "summary": "Sub-mounted Dash application"},
+        ]
+    }
+
+@app.get("/status")
+def get_status():
+    return {"status": "ok"}
+
 app.mount('/dash',WSGIMiddleware(dash_app.server))
 #app = WsgiToAsgi(app)
 
