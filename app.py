@@ -1,6 +1,7 @@
 from dash import Dash, html, dcc, callback, Output, Input, dash_table, State, exceptions
 import dash_bootstrap_components as dbc
 from flask import Flask
+from asgiref.wsgi import WsgiToAsgi
 #from fastapi import FastAPI
 #from fastapi.middleware.wsgi import WSGIMiddleware
 #import uvicorn
@@ -112,6 +113,7 @@ def update_table(value1,value2):
 #dash_app = app
 #app = FastAPI()
 #app.mount('/dash',WSGIMiddleware(dash_app.server))
+app = WsgiToAsgi(app)
 
 if __name__ == '__main__':
     #uvicorn.run(app, port=1000)
