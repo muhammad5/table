@@ -29,14 +29,15 @@ df_filter = pd.DataFrame(
 
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 
+server = Flask(__name__)
 
 #app = Dash(__name__, external_stylesheets=external_stylesheets)#requests_pathname_prefix='/dash/'
-app = Dash(__name__,requests_pathname_prefix='/dash/', external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
+app = Dash(__name__, server=server,requests_pathname_prefix='/dash/', external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
 #server = Flask(__name__) # define flask app.server
-server = FastAPI() #uvicorn
+#server = FastAPI() #uvicorn
 #server = app.server #gunicorn
 
 app.layout =dbc.Container([
