@@ -1,10 +1,10 @@
 from dash import Dash, html, dcc, callback, Output, Input, dash_table, State, exceptions
 import dash_bootstrap_components as dbc
 from flask import Flask
-from asgiref.wsgi import WsgiToAsgi
-#from fastapi import FastAPI
-#from fastapi.middleware.wsgi import WSGIMiddleware
-#import uvicorn
+#from asgiref.wsgi import WsgiToAsgi
+from fastapi import FastAPI
+from fastapi.middleware.wsgi import WSGIMiddleware
+import uvicorn
 #from waitress import serve
 #from gevent.pywsgi import WSGIServer
 #import subprocess
@@ -31,12 +31,12 @@ external_stylesheets = [dbc.themes.BOOTSTRAP]
 
 
 #app = Dash(__name__, external_stylesheets=external_stylesheets)#requests_pathname_prefix='/dash/'
-app = Dash(__name__, external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
+app = Dash(__name__,requests_pathname_prefix='/dash/', external_stylesheets=[dbc.themes.LITERA], assets_folder='assets')#BOOTSTRAP LUX FLATLY LITERA
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
-server = Flask(__name__) # define flask app.server
-#server = FastAPI() #uvicorn
+#server = Flask(__name__) # define flask app.server
+server = FastAPI() #uvicorn
 #server = app.server #gunicorn
 
 app.layout =dbc.Container([
@@ -110,19 +110,19 @@ def update_table(value1,value2):
 
     return tiers, data.to_dict("records"), status, tier
 
-#dash_app = app
-#app = FastAPI()
-#app.mount('/dash',WSGIMiddleware(dash_app.server))
-app = WsgiToAsgi(app)
+dash_app = app
+app = FastAPI()
+app.mount('/dash',WSGIMiddleware(dash_app.server))
+#app = WsgiToAsgi(app)
 
-#if __name__ == '__main__':
-    #uvicorn.run(app, port=1000)
+if __name__ == '__main__':
+    uvicorn.run(app, port=1000)
     #app.run_server(debug=False,host="0.0.0.0")
     #app.run_server(debug=False)
     #serve(app.server,host="0.0.0.0") #waitress
     #http_server = WSGIServer('0.0.0.0', 8080, app)
     #http_server.serve_forever()
-app.run_server(debug=False)
+#app.run_server(debug=False)
 
 #subprocess.run('waitress-serve --listen=0.0.0.0:8080 app:app.server')
 #subprocess.run(['waitress-serve','--listen=0.0.0.0:8080','app:app.server'])
