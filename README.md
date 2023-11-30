@@ -1,3 +1,3 @@
 # table
-News Table
-https://table-hiqe.onrender.com/
+<br>News Aggregator Table</br>
+<br>https://table-hiqe.onrender.com/</br>
