@@ -7,3 +7,6 @@ waitress-serve --listen=0.0.0.0 app:app.server
 uvicorn app:app --host 0.0.0.0
 
 hypercorn --bind 0.0.0.0:10000 app:app
+
+error
+six==1.16.0
