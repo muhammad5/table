@@ -29,9 +29,9 @@ fig1 = go.Figure(data=[
 fig1.update_layout(barmode='stack')
 
 fig2 = go.Figure(data=[
-    go.Bar(name='Imin', x=dfc.columns, y=dfc.values[3],marker_color='rgb(41,128,185)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
-    go.Bar(name='Gibran', x=dfc.columns, y=dfc.values[4],marker_color='rgb(241,196,15)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
-    go.Bar(name='Mahfud', x=dfc.columns, y=dfc.values[5],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
+    go.Bar(name='Imin', x=dfc.columns, y=dfc.values[3],marker_color='rgb( 22,160,133)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
+    go.Bar(name='Gibran', x=dfc.columns, y=dfc.values[4],marker_color='rgb(211,84,0)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
+    go.Bar(name='Mahfud', x=dfc.columns, y=dfc.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig2.update_layout(barmode='stack')
 
