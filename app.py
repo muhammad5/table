@@ -48,6 +48,7 @@ app.layout =dbc.Container([
     dash_table.DataTable(data=df.to_dict('records'),columns=[{"name": c, "id": c, 'presentation': 'markdown'} for c in df.columns if c not in ['thumbnail1','logo']], id='table-data',
                          fixed_rows={'headers': True},
                          page_size=75,
+                         cell_selectable = False,
                          style_table={'height': '750px', 'overflowY': 'auto','overflowX': 'scroll'},
                          style_cell={'minWidth': 55, 'width': 55, 'maxWidth': 95,
                                      'overflow': 'hidden','textOverflow': 'ellipsis',
