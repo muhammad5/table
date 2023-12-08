@@ -52,11 +52,13 @@ app = Dash(__name__, server=server,requests_pathname_prefix='/', external_styles
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
+bgcol = 'rgb(255, 255, 255)'
 #server = Flask(__name__) # define flask app.server
 #server = FastAPI() #uvicorn
 #server = app.server #gunicorn
 
-app.layout =dbc.Container([
+app.layout = html.Div([dbc.Container([
+    html.H2('Teleport News Aggregator',className='text-center'),
     dbc.Label('News Feed'),
     dbc.Row([dbc.Col(dcc.Dropdown([''], None, id='data-dropdown2', placeholder="Select a tier", disabled=True)),
             dbc.Col(dcc.Dropdown(df['thumbnail1'].unique(), None, id='data-dropdown1', 
@@ -68,7 +70,7 @@ app.layout =dbc.Container([
                          style_table={'height': '750px', 'overflowY': 'auto','overflowX': 'scroll'},
                          style_cell={'minWidth': 55, 'width': 55, 'maxWidth': 95,
                                      'overflow': 'hidden','textOverflow': 'ellipsis',
-                                     'textAlign': 'left'},
+                                     'textAlign': 'left','backgroundColor':bgcol},
                          style_data={'whiteSpace': 'normal',
                                      'height': 'auto',
                                      'lineHeight': '20px'},
@@ -93,9 +95,12 @@ app.layout =dbc.Container([
                         filter_action="native",
                         markdown_options={"html": True},
                         ),
+    html.Br(),
+    html.H4('Media Coverage Distribution',className='text-center'),
     dbc.Row([dbc.Col(dcc.Graph(figure=fig1)),dbc.Col(dcc.Graph(figure=fig2))]),
-    html.Div(id="table-output")
+    #html.Div(id="table-output")
     #dbc.Alert(id='table_out'),
+    ],style={'backgroundColor':bgcol})
 ])
 
 #@callback(Output('table_out', 'children'), Input('table-data', 'active_cell'))
