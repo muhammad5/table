@@ -20,20 +20,41 @@ df['thumbnail1'] = df['thumbnail']
 df['thumbnail'] = df['thumbnail'].apply(lambda x: "<img src='https://raw.githubusercontent.com/muhammad5/table/main/assets/{}.png' width='100' height='30' />".format(x))
 
 dfc = pd.read_csv('media.csv', sep=';')
+dfc = dfc.set_index(dfc.iloc[:,0])
+dfc = dfc.drop(dfc.columns[0], axis=1)
+col = dfc.columns
+col = col.sort_values()
+dfc = dfc[col]
+dfc1 = dfc.iloc[:,:12]
+dfc2 = dfc.iloc[:,12:]
 
 fig1 = go.Figure(data=[
-    go.Bar(name='Anies', x=dfc.columns, y=dfc.values[0],marker_color='rgb(41,128,185)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
-    go.Bar(name='Prabowo', x=dfc.columns, y=dfc.values[1],marker_color='rgb(241,196,15)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
-    go.Bar(name='Ganjar', x=dfc.columns, y=dfc.values[2],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
+    go.Bar(name='Anies', x=dfc1.columns, y=dfc1.values[0],marker_color='rgb(41,128,185)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
+    go.Bar(name='Prabowo', x=dfc1.columns, y=dfc1.values[1],marker_color='rgb(241,196,15)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
+    go.Bar(name='Ganjar', x=dfc1.columns, y=dfc1.values[2],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig1.update_layout(barmode='stack')
 
 fig2 = go.Figure(data=[
-    go.Bar(name='Imin', x=dfc.columns, y=dfc.values[3],marker_color='rgb( 22,160,133)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
-    go.Bar(name='Gibran', x=dfc.columns, y=dfc.values[4],marker_color='rgb(211,84,0)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
-    go.Bar(name='Mahfud', x=dfc.columns, y=dfc.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
+    go.Bar(name='Anies', x=dfc2.columns, y=dfc2.values[0],marker_color='rgb(41,128,185)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
+    go.Bar(name='Prabowo', x=dfc2.columns, y=dfc2.values[1],marker_color='rgb(241,196,15)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
+    go.Bar(name='Ganjar', x=dfc2.columns, y=dfc2.values[2],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig2.update_layout(barmode='stack')
+
+fig3 = go.Figure(data=[
+    go.Bar(name='Imin', x=dfc1.columns, y=dfc1.values[3],marker_color='rgb( 22,160,133)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
+    go.Bar(name='Gibran', x=dfc1.columns, y=dfc1.values[4],marker_color='rgb(211,84,0)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
+    go.Bar(name='Mahfud', x=dfc1.columns, y=dfc1.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
+])
+fig3.update_layout(barmode='stack')
+
+fig4 = go.Figure(data=[
+    go.Bar(name='Imin', x=dfc2.columns, y=dfc2.values[3],marker_color='rgb( 22,160,133)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
+    go.Bar(name='Gibran', x=dfc2.columns, y=dfc2.values[4],marker_color='rgb(211,84,0)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
+    go.Bar(name='Mahfud', x=dfc2.columns, y=dfc2.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
+])
+fig4.update_layout(barmode='stack')
 
 place_holder = None
 df_filter = pd.DataFrame(
@@ -98,6 +119,7 @@ app.layout = html.Div([dbc.Container([
     html.Br(),
     html.H4('Media Coverage Distribution',className='text-center'),
     dbc.Row([dbc.Col(dcc.Graph(figure=fig1)),dbc.Col(dcc.Graph(figure=fig2))]),
+    dbc.Row([dbc.Col(dcc.Graph(figure=fig3)),dbc.Col(dcc.Graph(figure=fig4))]),
     #html.Div(id="table-output")
     #dbc.Alert(id='table_out'),
     ],style={'backgroundColor':bgcol})
