@@ -31,14 +31,14 @@ dfc2 = dfc.iloc[:,13:]
 fig1 = go.Figure(data=[
     go.Bar(name='Anies', x=dfc1.columns, y=dfc1.values[0],marker_color='rgb(41,128,185)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
     go.Bar(name='Prabowo', x=dfc1.columns, y=dfc1.values[1],marker_color='rgb(241,196,15)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
-    go.Bar(name='Megawati', x=dfc1.columns, y=dfc1.values[2],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
+    go.Bar(name='Jokowi', x=dfc1.columns, y=dfc1.values[2],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig1.update_layout(barmode='stack')
 
 fig2 = go.Figure(data=[
     go.Bar(name='Anies', x=dfc2.columns, y=dfc2.values[0],marker_color='rgb(41,128,185)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
     go.Bar(name='Prabowo', x=dfc2.columns, y=dfc2.values[1],marker_color='rgb(241,196,15)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
-    go.Bar(name='Megawati', x=dfc2.columns, y=dfc2.values[2],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
+    go.Bar(name='Jokowi', x=dfc2.columns, y=dfc2.values[2],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig2.update_layout(barmode='stack')
 
