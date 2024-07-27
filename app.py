@@ -25,8 +25,8 @@ dfc = dfc.drop(dfc.columns[0], axis=1)
 col = dfc.columns
 col = col.sort_values()
 dfc = dfc[col]
-dfc1 = dfc.iloc[:,:12]
-dfc2 = dfc.iloc[:,12:]
+dfc1 = dfc.iloc[:,:13]
+dfc2 = dfc.iloc[:,13:]
 
 fig1 = go.Figure(data=[
     go.Bar(name='Anies', x=dfc1.columns, y=dfc1.values[0],marker_color='rgb(41,128,185)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
