@@ -117,6 +117,7 @@ app.layout = html.Div([dbc.Container([
                         #tooltip_duration=None,
                         filter_action="native",
                         markdown_options={"html": True},
+                        style_as_list_view=True,
                         ),
     html.Br(),
     html.H4('Media Coverage Distribution',className='text-center'),
