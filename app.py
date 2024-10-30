@@ -75,7 +75,6 @@ app = Dash(__name__, server=server,requests_pathname_prefix='/', external_styles
 app.title = 'Berita'
 app._favicon = ("Constellation Logo.ico")
 
-bgcol = 'rgb(255, 255, 255)'
 #server = Flask(__name__) # define flask app.server
 #server = FastAPI() #uvicorn
 #server = app.server #gunicorn
@@ -92,8 +91,7 @@ app.layout = html.Div([dbc.Container([
                          fixed_rows={'headers': True},
                          page_size=75,
                          cell_selectable = False,
-                         style_table={'height': '750px', 'overflowY': 'auto','overflowX': 'scroll',
-                                      'backgroundColor':bgcol},
+                         style_table={'height': '750px', 'overflowY': 'auto','overflowX': 'scroll'},
                          style_filter={'backgroundColor':'white'},
                          style_cell={'minWidth': 55, 'width': 55, 'maxWidth': 95,
                                      'overflow': 'hidden','textOverflow': 'ellipsis',
