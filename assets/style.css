@@ -1,0 +1,15 @@
+body {
+  background-color: #f2efe9;
+}
+
+.table-wrapper {
+  overflow: hidden auto;
+  position: relative;
+  max-height: 300px;
+}
+
+.table-wrapper > table > thead {
+  position: sticky;
+  top: 0;
+  background: lightgray;
+}
