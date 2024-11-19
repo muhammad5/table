@@ -47,14 +47,14 @@ fig2.update_layout(barmode='stack',paper_bgcolor=bgcol,plot_bgcolor=bgcol)
 fig3 = go.Figure(data=[
     go.Bar(name='Ridwan Kamil', x=dfc1.columns, y=dfc1.values[3],marker_color='rgb( 22,160,133)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
     go.Bar(name='Gibran', x=dfc1.columns, y=dfc1.values[4],marker_color='rgb(211,84,0)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
-    go.Bar(name='Kaesang', x=dfc1.columns, y=dfc1.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
+    go.Bar(name='Pramono Anung', x=dfc1.columns, y=dfc1.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig3.update_layout(barmode='stack',paper_bgcolor=bgcol,plot_bgcolor=bgcol)
 
 fig4 = go.Figure(data=[
     go.Bar(name='Ridwan Kamil', x=dfc2.columns, y=dfc2.values[3],marker_color='rgb( 22,160,133)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
     go.Bar(name='Gibran', x=dfc2.columns, y=dfc2.values[4],marker_color='rgb(211,84,0)'), #text=str(dfc.values[1]*100)+'%',textposition='auto'),
-    go.Bar(name='Kaesang', x=dfc2.columns, y=dfc2.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
+    go.Bar(name='Pramono Anung', x=dfc2.columns, y=dfc2.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig4.update_layout(barmode='stack',paper_bgcolor=bgcol,plot_bgcolor=bgcol)
 
