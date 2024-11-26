@@ -36,6 +36,7 @@ fig1 = go.Figure(data=[
     go.Bar(name='Jokowi', x=dfc1.columns, y=dfc1.values[2],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig1.update_layout(barmode='stack',paper_bgcolor=bgcol,plot_bgcolor=bgcol)
+fig1.update_xaxes(tickangle=30)
 
 fig2 = go.Figure(data=[
     go.Bar(name='Gibran', x=dfc2.columns, y=dfc2.values[0],marker_color='rgb(41,128,185)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
@@ -43,6 +44,7 @@ fig2 = go.Figure(data=[
     go.Bar(name='Jokowi', x=dfc2.columns, y=dfc2.values[2],marker_color='rgb(192,57,43)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig2.update_layout(barmode='stack',paper_bgcolor=bgcol,plot_bgcolor=bgcol)
+fig2.update_xaxes(tickangle=30)
 
 fig3 = go.Figure(data=[
     go.Bar(name='Ridwan Kamil', x=dfc1.columns, y=dfc1.values[3],marker_color='rgb( 22,160,133)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
@@ -50,6 +52,7 @@ fig3 = go.Figure(data=[
     go.Bar(name='Pramono Anung', x=dfc1.columns, y=dfc1.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig3.update_layout(barmode='stack',paper_bgcolor=bgcol,plot_bgcolor=bgcol)
+fig3.update_xaxes(tickangle=30)
 
 fig4 = go.Figure(data=[
     go.Bar(name='Ridwan Kamil', x=dfc2.columns, y=dfc2.values[3],marker_color='rgb( 22,160,133)'), #text=str(dfc.values[0]*100)+'%',textposition='auto'),
@@ -57,6 +60,7 @@ fig4 = go.Figure(data=[
     go.Bar(name='Pramono Anung', x=dfc2.columns, y=dfc2.values[5],marker_color='rgb(142,68,173)') #text=str(dfc.values[2]*100)+'%',textposition='auto')
 ])
 fig4.update_layout(barmode='stack',paper_bgcolor=bgcol,plot_bgcolor=bgcol)
+fig4.update_xaxes(tickangle=30)
 
 place_holder = None
 df_filter = pd.DataFrame(
