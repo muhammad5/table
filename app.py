@@ -85,7 +85,8 @@ app._favicon = ("Constellation Logo.ico")
 
 app.layout = html.Div([dbc.Container([
     #html.H2('Teleport News Aggregator',className='text-center'),
-    html.Div(html.Center(html.Img(src='https://raw.githubusercontent.com/muhammad5/table/main/assets/title.png',
+    #html.Div(html.Center(html.Img(src='https://raw.githubusercontent.com/muhammad5/table/main/assets/title.png',
+    html.Div(html.Center(html.Img(src='https://i.postimg.cc/Qxqv81cy/title.png',
                      style={'height':'40%', 'width':'40%','display': 'inline-block'}))),
     dbc.Label('News Feed'),
     dbc.Row([dbc.Col(dcc.Dropdown([''], None, id='data-dropdown2', placeholder="Select a tier", disabled=True)),
